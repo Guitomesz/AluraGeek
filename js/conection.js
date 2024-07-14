@@ -45,7 +45,7 @@ async function createProduct(title, price, image) {
 
 async function deleteProduct(productId) {
     try {
-        const response = await fetch(`https://alura-geek-nine-psi.vercel.app/produtos/${productId}`, {
+        const response = await fetch(`${BASE_URL}/produtos/produtos/${productId}`, {
             method: 'DELETE',
             headers: {
                 "Content-Type": "application/json"
