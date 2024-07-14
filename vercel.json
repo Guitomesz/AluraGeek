@@ -1,3 +1,3 @@
 {
-  "routes": [{ "src": "/api/produtos/:id", "dest": "/data/db.json" }]
+  "routes": [{ "src": "/api/produtos", "dest": "/data/db.json" }]
 }
