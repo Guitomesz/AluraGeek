@@ -15,7 +15,6 @@ async function productsList() {
     }
 }
 
-
 async function createProduct(title, price, image) {
     try {
         const response = await fetch(`${BASE_URL}/produtos`, {
@@ -41,7 +40,6 @@ async function createProduct(title, price, image) {
         throw error; // ou trate o erro de outra forma, conforme necessário
     }
 }
-
 
 async function deleteProduct(productId) {
     try {
