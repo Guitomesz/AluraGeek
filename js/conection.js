@@ -40,8 +40,8 @@ async function createProduct(id, title, price, image) {
     return createdProduct;
 }
 
-async function deleteProduct(productId) {
-    const connection = await fetch(`${BASE_URL}/produtos/${productId}`, {
+async function deleteProduct(id) {
+    const connection = await fetch(`${BASE_URL}/produtos/${id}`, {
         method: 'DELETE',
         headers: {
             "Content-Type": "application/json"
