@@ -1,4 +1,4 @@
-const BASE_URL = 'https://alura-geek-nine-psi.vercel.app';
+const BASE_URL = 'https://alura-geek-nine-psi.vercel.app/api';
 
 async function productsList() {
     try {
@@ -7,14 +7,11 @@ async function productsList() {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
         const productList = await response.json();
-        // Verifique a estrutura do objeto retornado
         console.log('Resposta da API:', productList);
-
-        // Se a resposta não tiver a chave "produtos", retorne a resposta diretamente
-        return productList.produtos || productList;
+        return productList;
     } catch (error) {
         console.error('Erro ao obter a lista de produtos:', error);
-        throw error; // ou trate o erro de outra forma, conforme necessário
+        throw error;
     }
 }
 
