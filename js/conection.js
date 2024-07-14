@@ -1,14 +1,14 @@
 // conection.js
-const BASE_URL = 'https://alura-geek-nine-psi.vercel.app/api'; // Atualizar para a URL correta do backend
+const BASE_URL = 'https://<seu-vercel-app>'; // Substitua pelo seu domínio Vercel
 
 async function productsList() {
     try {
-        const response = await fetch(`${BASE_URL}/produtos`);
+        const response = await fetch(`${BASE_URL}/api/produtos`);
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
         const productList = await response.json();
-        return productList;
+        return productList.produtos; // Certifique-se de retornar apenas a lista de produtos
     } catch (error) {
         console.error('Erro ao obter a lista de produtos:', error);
         throw error;
@@ -17,7 +17,7 @@ async function productsList() {
 
 async function createProduct(title, price, image) {
     try {
-        const response = await fetch(`${BASE_URL}/produtos`, {
+        const response = await fetch(`${BASE_URL}/api/produtos`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -43,7 +43,7 @@ async function createProduct(title, price, image) {
 
 async function deleteProduct(productId) {
     try {
-        const response = await fetch(`${BASE_URL}/produtos/${productId}`, {
+        const response = await fetch(`${BASE_URL}/api/produtos/${productId}`, {
             method: 'DELETE',
             headers: {
                 "Content-Type": "application/json"
