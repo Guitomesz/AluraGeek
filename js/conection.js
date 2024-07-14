@@ -44,24 +44,19 @@ async function createProduct(title, price, image) {
 
 
 async function deleteProduct(productId) {
-    try {
-        const response = await fetch(`${BASE_URL}/produtos/${productId}`, {
-            method: 'DELETE',
-            headers: {
-                "Content-Type": "application/json"
-            }
-        });
-
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
+    const connection = await fetch(`${BASE_URL}/produtos/${productId}`, {
+        method: 'DELETE',
+        headers: {
+            "Content-Type": "application/json"
         }
+    });
 
-        const deletedProduct = await response.json();
-        return deletedProduct;
-    } catch (error) {
-        console.error('Erro ao excluir produto:', error);
-        throw error; // ou trate o erro de outra forma, conforme necessário
+    if (!connection.ok) {
+        throw new Error(`HTTP error! Status: ${connection.status}`);
     }
+
+    const deletedProduct = await connection.json();
+    return deletedProduct;
 }
 
 export { productsList, createProduct, deleteProduct };
