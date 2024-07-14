@@ -3,10 +3,10 @@ import axios from 'axios'
 axios.get('https://alura-geek-nine-psi.vercel.app/produtos')
     .then(resposta => console.log(resposta.data))
 
-axios.get('https://alura-geek-nine-psi.vercel.app/produtos')
+axios.get('https://alura-geek-nine-psi.vercel.app/produtos/1')
     .then(resposta => console.log(resposta.data))
 
-axios.post('https://alura-geek-nine-psi.vercel.app/produtos/1', {
+axios.post('https://alura-geek-nine-psi.vercel.app/produtos', {
     nome: 'Novo projeto incrivel'
 })
     .then(resposta => console.log(resposta.data))
