@@ -3,12 +3,12 @@ const BASE_URL = 'https://alura-geek-nine-psi.vercel.app';
 
 async function productsList() {
     try {
-        const response = await fetch('${BASE_URL}/produtos');
+        const response = await fetch(`${BASE_URL}/produtos`);
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
         const productList = await response.json();
-        return productList.produtos; // Certifique-se de retornar apenas a lista de produtos
+        return productList;
     } catch (error) {
         console.error('Erro ao obter a lista de produtos:', error);
         throw error; // ou trate o erro de outra forma, conforme necessário
