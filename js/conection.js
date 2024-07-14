@@ -2,8 +2,6 @@
 
 const BASE_URL = '/api/produtos'; // Alterado para o endpoint correto no Vercel
 
-const BASE_URL = '/api/produtos';
-
 async function productsList() {
     try {
         const response = await fetch(BASE_URL);
