@@ -8,9 +8,9 @@
     },
     {
       "id": "2",
-      "title": "Stormtrooper",
+      "title": "Game Boy Classic",
       "price": 59,
-      "image": "../assets/images/StormTrooperCaneca.jpeg"
+      "image": "../assets/images/GameboyClassic.jpg"
     }
   ]
 }
