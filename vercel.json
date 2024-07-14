@@ -3,12 +3,12 @@
     {
       "src": "/produtos",
       "methods": ["GET", "POST"],
-      "dest": "/api/produtos/index.js"
+      "dest": "/produtos/index.js"
     },
     {
       "src": "/produtos/:id",
       "methods": ["GET", "PUT", "DELETE"],
-      "dest": "/api/produtos/[id].js"
+      "dest": "/produtos/[id].js"
     }
   ]
 }
