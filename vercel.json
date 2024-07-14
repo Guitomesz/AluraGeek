@@ -3,6 +3,10 @@
     {
       "src": "/api/produtos",
       "dest": "/data/db.json"
+    },
+    {
+      "src": "/api/produtos/(.*)",
+      "dest": "/data/db.json"
     }
   ]
 }

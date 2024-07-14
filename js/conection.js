@@ -1,6 +1,6 @@
 // conection.js
 
-const BASE_URL = '/api/produtos'; // Alterado para o endpoint correto no Vercel
+const BASE_URL = '/api/produtos';
 
 async function productsList() {
     try {
@@ -11,17 +11,16 @@ async function productsList() {
         const data = await response.json();
 
         // Verifica se 'produtos' é um array
-        if (!Array.isArray(data.produtos)) {
+        if (!Array.isArray(data)) {
             throw new Error('A lista de produtos não é um array válido.');
         }
 
-        return data.produtos; // Retorna apenas a lista de produtos
+        return data; // Retorna a lista de produtos diretamente
     } catch (error) {
         console.error('Erro ao obter a lista de produtos:', error);
         throw error;
     }
 }
-
 
 async function createProduct(title, price, image) {
     try {
