@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/AluraGeek.css">
+</head>
+
+<body>
+    <div class="bodyBackground">
+        <header><img src="./assets/images/LogoAlura.png" class="logoAlura" alt=""></header>
+        <div class="mainContainerBackground">
+            <main class="mainContainer">
+                <section class="aluraFormSection">
+                    <h1>ADICIONAR PRODUTO:</h1>
+                    <form action="" class="aluraFormContainer" data-form>
+                        <input type="text" name="title" id="nameInput" placeholder="nome..." data-title required>
+                        <input type="number" name="price" id="valueInput" placeholder="valor..." data-price required>
+                        <input type="file" name="image" id="imageInput" accept="image/*" placeholder="imagem..."
+                            data-image required>
+                        <div class="formBtns">
+                            <input type="submit" value="Guardar" class="storeItemButton">
+                            <input type="submit" value="Limpar" class="clearItemButton">
+                        </div>
+                    </form>
+                </section>
+                <section class="aluraCardsSection">
+                    <h1>MEUS PRODUTOS:</h1>
+                    <div class="aluraCardsContainer" data-list></div>
+                </section>
+            </main>
+        </div>
+        <footer class="footerSection"><img src="./assets/images/LogoAlura.png" class="logoAlura" alt="">
+            <P class="footerParagraph">DESENVOLVIDO POR GUILHERME TOMESZ FLORES <BR>ALURA LATAM 2024</P>
+        </footer>
+    </div>
+
+    <script src="./js/conection.js" type="module"></script>
+    <script src="./js/showProducts.js" type="module"></script>
+    <script src="./js/createProduct.js" type="module"></script>
+</body>
+
+</html>
