@@ -3,12 +3,12 @@
     {
       "src": "/api/produtos",
       "methods": ["GET", "POST"],
-      "dest": "/api/db.json"
+      "dest": "/data/db.json"
     },
     {
       "src": "/api/produtos/(.*)",
       "methods": ["GET", "POST", "DELETE"],
-      "dest": "/api/db.json"
+      "dest": "/data/db.json"
     }
   ]
 }

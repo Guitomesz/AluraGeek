@@ -1,5 +1,3 @@
-// conection.js
-
 const BASE_URL = 'https://alura-geek-nine-psi.vercel.app/api/produtos';
 
 async function productsList() {
