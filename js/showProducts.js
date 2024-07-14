@@ -41,11 +41,6 @@ async function showProducts() {
     try {
         const productListData = await productsList();
 
-        // Verifica se o retorno é um array
-        if (!Array.isArray(productListData)) {
-            throw new Error('A lista de produtos não é um array válido.');
-        }
-
         // Limpa a lista antes de adicionar os novos itens
         list.innerHTML = '';
 

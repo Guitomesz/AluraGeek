@@ -2,19 +2,28 @@
 
 const BASE_URL = '/api/produtos'; // Alterado para o endpoint correto no Vercel
 
+const BASE_URL = '/api/produtos';
+
 async function productsList() {
     try {
         const response = await fetch(BASE_URL);
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
-        const productList = await response.json();
-        return productList; // Retorna diretamente a lista de produtos
+        const data = await response.json();
+
+        // Verifica se 'produtos' é um array
+        if (!Array.isArray(data.produtos)) {
+            throw new Error('A lista de produtos não é um array válido.');
+        }
+
+        return data.produtos; // Retorna apenas a lista de produtos
     } catch (error) {
         console.error('Erro ao obter a lista de produtos:', error);
         throw error;
     }
 }
+
 
 async function createProduct(title, price, image) {
     try {
