@@ -2,13 +2,13 @@
 
 async function productsList() {
     try {
-        const connection = await fetch("https://alura-geek-khaki.vercel.app/");
+        const response = await fetch("https://alura-geek-khaki.vercel.app/");
 
-        if (!connection.ok) {
-            throw new Error(`HTTP error! Status: ${connection.status}`);
+        if (!response.ok) {
+            throw new Error(`Failed to fetch products: ${response.status} ${response.statusText}`);
         }
 
-        const productList = await connection.json();
+        const productList = await response.json();
         return productList;
     } catch (error) {
         console.error('Error fetching products:', error);
