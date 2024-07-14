@@ -1,5 +1,5 @@
 // conection.js
-const BASE_URL = 'https://alura-geek-nine-psi.vercel.app';
+const BASE_URL = 'https://alura-geek-nine-psi.vercel.app/api'; // Atualizar para a URL correta do backend
 
 async function productsList() {
     try {
@@ -8,10 +8,10 @@ async function productsList() {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
         const productList = await response.json();
-        return productList.produtos; // Certifique-se de retornar apenas a lista de produtos
+        return productList;
     } catch (error) {
         console.error('Erro ao obter a lista de produtos:', error);
-        throw error; // ou trate o erro de outra forma, conforme necessário
+        throw error;
     }
 }
 
@@ -37,7 +37,7 @@ async function createProduct(title, price, image) {
         return createdProduct;
     } catch (error) {
         console.error('Erro ao criar produto:', error);
-        throw error; // ou trate o erro de outra forma, conforme necessário
+        throw error;
     }
 }
 
@@ -58,7 +58,7 @@ async function deleteProduct(productId) {
         return deletedProduct;
     } catch (error) {
         console.error('Erro ao excluir produto:', error);
-        throw error; // ou trate o erro de outra forma, conforme necessário
+        throw error;
     }
 }
 
