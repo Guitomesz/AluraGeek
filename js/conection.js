@@ -38,18 +38,23 @@ async function createProduct(id, title, price, image) {
 }
 
 async function deleteProduct(id) {
-    const connection = await fetch(`${BASE_URL}/produtos/${id}`, {
-        method: 'DELETE',
-        headers: {
-            "Content-Type": "application/json"
+    try {
+        const connection = await fetch(`${BASE_URL}/produtos/${id}`, {
+            method: 'DELETE',
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
+
+        if (!connection.ok) {
+            throw new Error(`HTTP error! Status: ${connection.status}`);
         }
-    });
 
-    if (!connection.ok) {
-        throw new Error(`HTTP error! Status: ${connection.status}`);
+        return connection.json();
+    } catch (error) {
+        console.error('Erro ao deletar produto:', error);
+        throw error;
     }
-
-    return connection.json();
 }
 
 export { productsList, createProduct, deleteProduct };

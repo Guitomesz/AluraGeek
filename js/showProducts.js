@@ -41,15 +41,11 @@ async function showProducts() {
     try {
         const productListData = await productsList();
 
-        // Log para verificar a lista de produtos
         console.log('Lista de produtos:', productListData);
 
-        // Limpa a lista antes de adicionar os novos itens
         list.innerHTML = '';
 
-        // Verifica se productListData é um array
         if (Array.isArray(productListData)) {
-            // Itera sobre a lista de produtos e cria os cards
             productListData.forEach(product => {
                 const card = createCard(product.image, product.title, product.price, product.id);
                 list.appendChild(card);
@@ -63,5 +59,6 @@ async function showProducts() {
         alert("Erro ao carregar a lista de produtos. Verifique o console para mais detalhes.");
     }
 }
+
 
 showProducts();

@@ -11,42 +11,6 @@
       "title": "Game Boy Classic",
       "price": 59,
       "image": "../assets/images/GameboyClassic.jpg"
-    },
-    {
-      "id": 3,
-      "title": "Stormtrooper",
-      "price": 60,
-      "image": "../assets/images/StormTrooperCaneca.jpeg"
-    },
-    {
-      "id": 4,
-      "title": "Game Boy Classic",
-      "price": 59,
-      "image": "../assets/images/GameboyClassic.jpg"
-    },
-    {
-      "id": 5,
-      "title": "Stormtrooper",
-      "price": 60,
-      "image": "../assets/images/StormTrooperCaneca.jpeg"
-    },
-    {
-      "id": 6,
-      "title": "Game Boy Classic",
-      "price": 59,
-      "image": "../assets/images/GameboyClassic.jpg"
-    },
-    {
-      "id": 7,
-      "title": "Stormtrooper",
-      "price": 60,
-      "image": "../assets/images/StormTrooperCaneca.jpeg"
-    },
-    {
-      "id": 8,
-      "title": "Game Boy Classic",
-      "price": 59,
-      "image": "../assets/images/GameboyClassic.jpg"
     }
   ]
 }
