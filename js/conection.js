@@ -2,9 +2,17 @@
 const BASE_URL = 'https://alura-geek-nine-psi.vercel.app';
 
 async function productsList() {
-    const connection = await fetch(`${BASE_URL}/produtos`)
-    const productList = await connection.json();
-    return productList;
+    try {
+        const response = await fetch("https://alura-geek-khaki.vercel.app/produtos");
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        const productList = await response.json();
+        return productList.produtos; // Certifique-se de retornar apenas a lista de produtos
+    } catch (error) {
+        console.error('Erro ao obter a lista de produtos:', error);
+        throw error; // ou trate o erro de outra forma, conforme necessário
+    }
 }
 
 async function createProduct(title, price, image) {

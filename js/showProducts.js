@@ -28,13 +28,23 @@ function createCard(image, title, price, id) {
 }
 
 async function showProducts() {
-    const productListData = await productsList();
+    try {
+        const productListData = await productsList();
 
-    productListData.forEach(product => {
-        const card = createCard(product.image, product.title, product.price, product.id);
-        list.appendChild(card);
-    });
+        if (!Array.isArray(productListData)) {
+            throw new Error('A lista de produtos não é um array.');
+        }
+
+        productListData.forEach(product => {
+            const card = createCard(product.image, product.title, product.price, product.id);
+            list.appendChild(card);
+        });
+    } catch (error) {
+        console.error('Erro ao exibir produtos:', error);
+        // Lide com o erro de forma apropriada, como exibir uma mensagem para o usuário
+    }
 }
+
 
 async function handleDelete(productId) {
     if (confirm("Tem certeza que deseja deletar este produto?")) {
