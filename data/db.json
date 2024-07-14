@@ -1,13 +1,13 @@
 {
   "produtos": [
     {
-      "id": "7",
+      "id": "1",
       "title": "Stormtrooper",
       "price": 60,
       "image": "../assets/images/StormTrooperCaneca.jpeg"
     },
     {
-      "id": "9",
+      "id": "2",
       "title": "Stormtrooper",
       "price": 60,
       "image": "../assets/images/StormTrooperCaneca.jpeg"

@@ -1,13 +1,13 @@
 // conection.js
 
 async function productsList() {
-    const connection = await fetch("https://alura-geek-khaki.vercel.app/");
+    const connection = await fetch("https://alura-geek-khaki.vercel.app/produtos");
     const productList = await connection.json();
     return productList;
 }
 
 async function createProduct(title, price, image) {
-    const connection = await fetch("https://alura-geek-khaki.vercel.app/", {
+    const connection = await fetch("https://alura-geek-khaki.vercel.app/produtos", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -24,7 +24,7 @@ async function createProduct(title, price, image) {
 }
 
 async function deleteProduct(productId) {
-    const connection = await fetch(`https://alura-geek-khaki.vercel.app/${productId}`, {
+    const connection = await fetch(`https://alura-geek-khaki.vercel.app/produtos/${productId}`, {
         method: 'DELETE',
         headers: {
             "Content-Type": "application/json"
