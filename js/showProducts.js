@@ -1,5 +1,3 @@
-// showProducts.js
-
 import { productsList, deleteProduct } from "./conection.js";
 
 const list = document.querySelector("[data-list]");
@@ -30,17 +28,19 @@ function createCard(image, title, price, id) {
 async function showProducts() {
     try {
         const productListData = await productsList();
-        console.log(productListData); // Adicione este console.log para depuração
-        productListData.forEach(product => {
-            const card = createCard(product.image, product.title, product.price, product.id);
-            list.appendChild(card);
-        });
+        console.log('Product List Data:', productListData); // Adicione este console.log para depuração
+        if (Array.isArray(productListData)) {
+            productListData.forEach(product => {
+                const card = createCard(product.image, product.title, product.price, product.id);
+                list.appendChild(card);
+            });
+        } else {
+            console.error('A resposta da API não é um array:', productListData);
+        }
     } catch (error) {
         console.error("Erro ao carregar produtos:", error);
     }
 }
-
-
 
 async function handleDelete(productId) {
     if (confirm("Tem certeza que deseja deletar este produto?")) {
