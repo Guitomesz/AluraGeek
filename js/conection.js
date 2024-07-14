@@ -1,4 +1,6 @@
-const BASE_URL = 'https://alura-geek-nine-psi.vercel.app/api/produtos';
+// conection.js
+
+const BASE_URL = '/api/produtos'; // Alterado para o endpoint correto no Vercel
 
 async function productsList() {
     try {
@@ -6,17 +8,8 @@ async function productsList() {
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
-        const data = await response.json();
-
-        // Log para verificar o que está sendo retornado
-        console.log('Data retornada do servidor:', data);
-
-        // Verifica se 'data' é um array
-        if (!Array.isArray(data)) {
-            throw new Error('A lista de produtos não é um array válido.');
-        }
-
-        return data; // Retorna a lista de produtos diretamente
+        const productList = await response.json();
+        return productList; // Retorna diretamente a lista de produtos
     } catch (error) {
         console.error('Erro ao obter a lista de produtos:', error);
         throw error;
