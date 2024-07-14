@@ -42,6 +42,7 @@ async function createProduct(title, price, image) {
     }
 }
 
+
 async function deleteProduct(productId) {
     const connection = await fetch(`${BASE_URL}/produtos/${productId}`, {
         method: 'DELETE',
