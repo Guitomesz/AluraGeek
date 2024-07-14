@@ -1,5 +1,5 @@
 // conection.js
-const BASE_URL = 'https://alura-geek-khaki.vercel.app';
+const BASE_URL = 'https://alura-geek-nine-psi.vercel.app';
 
 async function productsList() {
     const connection = await fetch(`${BASE_URL}/produtos`)
