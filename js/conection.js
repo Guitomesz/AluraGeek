@@ -47,7 +47,8 @@ async function deleteProduct(id) {
         });
 
         if (!connection.ok) {
-            throw new Error(`HTTP error! Status: ${connection.status}`);
+            const errorData = await connection.json();
+            throw new Error(`HTTP error! Status: ${connection.status}. Message: ${errorData.error}`);
         }
 
         return connection.json();
