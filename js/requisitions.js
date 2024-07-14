@@ -1,27 +1,21 @@
-import axios from 'axios';
+import axios from 'axios'
 
-axios.get('/api/produtos')
+axios.get('https://alura-geek-nine-psi.vercel.app/produtos')
     .then(resposta => console.log(resposta.data))
-    .catch(error => console.error('Erro ao obter produtos:', error));
 
-axios.post('/api/produtos', {
-    id: 9,  // Certifique-se de passar um ID único
-    title: 'Novo projeto incrivel',
-    price: 100,
-    image: '../assets/images/novaImagem.jpg'
+axios.get('https://alura-geek-nine-psi.vercel.app/produtos')
+    .then(resposta => console.log(resposta.data))
+
+axios.post('https://alura-geek-nine-psi.vercel.app/produtos/1', {
+    nome: 'Novo projeto incrivel'
 })
     .then(resposta => console.log(resposta.data))
-    .catch(error => console.error('Erro ao criar produto:', error));
 
-axios.put('/api/produtos/1', {
+axios.put('https://alura-geek-nine-psi.vercel.app/produtos/1', {
     id: 1,
-    title: 'Projeto incrível atualizado',
-    price: 120,
-    image: '../assets/images/novaImagemAtualizada.jpg'
+    nome: 'Novo projeto incrivel'
 })
     .then(resposta => console.log(resposta.data))
-    .catch(error => console.error('Erro ao atualizar produto:', error));
 
-axios.delete('/api/produtos/1')
+axios.delete('https://alura-geek-nine-psi.vercel.app/produtos/1')
     .then(resposta => console.log(resposta.data))
-    .catch(error => console.error('Erro ao deletar produto:', error));
