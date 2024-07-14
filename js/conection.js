@@ -18,13 +18,14 @@ async function productsList() {
     }
 }
 
-async function createProduct(title, price, image) {
+async function createProduct(id, title, price, image) {
     const connection = await fetch(`${BASE_URL}/produtos`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
+            id: id,
             title: title,
             price: price,
             image: image
