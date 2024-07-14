@@ -3,7 +3,7 @@
     {
       "src": "/api/produtos",
       "methods": ["GET", "POST"],
-      "dest": "/api/produtos.js"
+      "dest": "/api/produtos/index.js"
     },
     {
       "src": "/api/produtos/:id",
