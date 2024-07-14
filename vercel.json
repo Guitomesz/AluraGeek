@@ -2,10 +2,12 @@
   "routes": [
     {
       "src": "/api/produtos",
+      "methods": ["GET", "POST", "PUT", "DELETE"],
       "dest": "/data/db.json"
     },
     {
       "src": "/api/produtos/(.*)",
+      "methods": ["GET", "POST", "PUT", "DELETE"],
       "dest": "/data/db.json"
     }
   ]

@@ -10,12 +10,12 @@ async function productsList() {
         }
         const data = await response.json();
 
-        // Verifica se 'produtos' é um array
-        if (!Array.isArray(data)) {
+        // Verifica se 'data' é um array
+        if (!Array.isArray(data.produtos)) {
             throw new Error('A lista de produtos não é um array válido.');
         }
 
-        return data; // Retorna a lista de produtos diretamente
+        return data.produtos; // Retorna apenas a lista de produtos
     } catch (error) {
         console.error('Erro ao obter a lista de produtos:', error);
         throw error;
