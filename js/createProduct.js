@@ -18,15 +18,18 @@ async function handleSubmit(event) {
         reader.onload = async function (event) {
             const image = event.target.result;
 
-            // Chama a API para criar o produto
-            const newProduct = await createProduct(title, price, image);
-            alert("Produto criado com sucesso!");
-
-            // Limpa o formulário após a criação do produto
-            form.reset();
+            try {
+                const newProduct = await createProduct(title, price, image);
+                alert("Produto criado com sucesso!");
+                form.reset();
+                location.reload(); // Para atualizar a lista de produtos
+            } catch (error) {
+                console.error('Erro ao criar produto:', error);
+                alert("Erro ao criar o produto. Verifique o console para mais detalhes.");
+            }
         };
 
-        reader.readAsDataURL(file); // Lê o conteúdo do arquivo como Data URL
+        reader.readAsDataURL(file);
     }
 }
 
