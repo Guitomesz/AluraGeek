@@ -18,7 +18,7 @@ async function productsList() {
 
 async function createProduct(title, price, image) {
     try {
-        const response = await fetch("https://alura-geek-nine-psi.vercel.app/produtos", {
+        const response = await fetch(`${BASE_URL}/produtos`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
