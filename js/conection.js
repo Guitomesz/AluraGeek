@@ -60,6 +60,6 @@ async function deleteProduct(productId) {
         console.error('Erro ao excluir produto:', error);
         throw error;
     }
-}
+}   
 
 export { productsList, createProduct, deleteProduct };
