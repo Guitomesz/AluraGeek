@@ -47,6 +47,7 @@ async function handleDelete(productId) {
         await deleteProduct(productId);
         alert("Produto deletado com sucesso!");
         location.reload();
+
     }
 }
 
