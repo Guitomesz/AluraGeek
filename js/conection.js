@@ -3,7 +3,7 @@ const BASE_URL = 'https://alura-geek-nine-psi.vercel.app';
 
 async function productsList() {
     try {
-        const response = await fetch("${BASE_URL}/produtos");
+        const response = await fetch('${BASE_URL}/produtos');
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
