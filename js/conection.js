@@ -1,29 +1,14 @@
 // conection.js
+const BASE_URL = 'https://alura-geek-khaki.vercel.app';
 
 async function productsList() {
-    try {
-        const response = await fetch("https://alura-geek-khaki.vercel.app/produtos");
-
-        if (!response.ok) {
-            throw new Error(`Failed to fetch products: ${response.status} ${response.statusText}`);
-        }
-
-        const contentType = response.headers.get('content-type');
-        if (!contentType || !contentType.includes('application/json')) {
-            throw new Error('Unexpected response content-type, expected JSON');
-        }
-
-        const productList = await response.json();
-        return productList;
-    } catch (error) {
-        console.error('Error fetching products:', error);
-        throw error; // Rethrow the error to be handled elsewhere
-    }
+    const connection = await fetch(`${BASE_URL}/produtos`)
+    const productList = await connection.json();
+    return productList;
 }
 
-
 async function createProduct(title, price, image) {
-    const connection = await fetch("https://alura-geek-khaki.vercel.app/produtos", {
+    const connection = await fetch(`${BASE_URL}/produtos`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -40,7 +25,7 @@ async function createProduct(title, price, image) {
 }
 
 async function deleteProduct(productId) {
-    const connection = await fetch(`https://alura-geek-khaki.vercel.app/produtos/${productId}`, {
+    const connection = await fetch(`${BASE_URL}/produtos/${productId}`, {
         method: 'DELETE',
         headers: {
             "Content-Type": "application/json"
