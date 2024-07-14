@@ -20,27 +20,34 @@ function createCard(image, title, price, id) {
         </div>
     `;
 
-    // Adicionar evento de clique para o botão de exclusão
     const deleteButton = card.querySelector('.delete-button');
-    deleteButton.addEventListener('click', () => handleDelete(id));
+    deleteButton.addEventListener('click', async () => {
+        try {
+            if (confirm("Tem certeza que deseja deletar este produto?")) {
+                await deleteProduct(id);
+                alert("Produto deletado com sucesso!");
+                location.reload();
+            }
+        } catch (error) {
+            console.error('Erro ao deletar produto:', error);
+            alert("Erro ao deletar o produto. Verifique o console para mais detalhes.");
+        }
+    });
 
     return card;
 }
 
 async function showProducts() {
-    const productListData = await productsList();
+    try {
+        const productListData = await productsList();
 
-    productListData.forEach(product => {
-        const card = createCard(product.image, product.title, product.price, product.id);
-        list.appendChild(card);
-    });
-}
-
-async function handleDelete(productId) {
-    if (confirm("Tem certeza que deseja deletar este produto?")) {
-        await deleteProduct(productId);
-        alert("Produto deletado com sucesso!");
-        location.reload();
+        productListData.forEach(product => {
+            const card = createCard(product.image, product.title, product.price, product.id);
+            list.appendChild(card);
+        });
+    } catch (error) {
+        console.error('Erro ao carregar lista de produtos:', error);
+        alert("Erro ao carregar a lista de produtos. Verifique o console para mais detalhes.");
     }
 }
 
