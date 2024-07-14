@@ -8,6 +8,11 @@ async function productsList() {
             throw new Error(`Failed to fetch products: ${response.status} ${response.statusText}`);
         }
 
+        const contentType = response.headers.get('content-type');
+        if (!contentType || !contentType.includes('application/json')) {
+            throw new Error('Unexpected response content-type, expected JSON');
+        }
+
         const productList = await response.json();
         return productList;
     } catch (error) {
