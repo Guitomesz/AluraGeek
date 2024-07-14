@@ -1,5 +1,5 @@
 // conection.js
-const BASE_URL = 'https://<seu-vercel-app>'; // Substitua pelo seu domínio Vercel
+const BASE_URL = 'https://alura-geek-nine-psi.vercel.app'; // Substitua pelo seu domínio Vercel
 
 async function productsList() {
     try {
