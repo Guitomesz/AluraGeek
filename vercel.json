@@ -1,12 +1,12 @@
 {
   "routes": [
     {
-      "src": "/api/produtos",
+      "src": "/produtos",
       "methods": ["GET", "POST"],
       "dest": "/api/produtos/index.js"
     },
     {
-      "src": "/api/produtos/:id",
+      "src": "/produtos/:id",
       "methods": ["GET", "PUT", "DELETE"],
       "dest": "/api/produtos/[id].js"
     }
