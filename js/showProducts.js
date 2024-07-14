@@ -30,7 +30,7 @@ function createCard(image, title, price, id) {
             }
         } catch (error) {
             console.error('Erro ao excluir produto:', error);
-            // Lide com o erro de forma apropriada, como exibir uma mensagem para o usuário
+            alert('Não foi possível excluir o produto. Tente novamente mais tarde.');
         }
     });
 
@@ -53,7 +53,7 @@ async function showProducts() {
         });
     } catch (error) {
         console.error('Erro ao exibir produtos:', error);
-        // Lide com o erro de forma apropriada, como exibir uma mensagem para o usuário
+        alert('Não foi possível carregar a lista de produtos. Tente novamente mais tarde.');
     }
 }
 

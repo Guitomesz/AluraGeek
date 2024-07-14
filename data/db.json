@@ -1,13 +1,13 @@
 {
   "produtos": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Stormtrooper",
       "price": 60,
       "image": "../assets/images/StormTrooperCaneca.jpeg"
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "Game Boy Classic",
       "price": 59,
       "image": "../assets/images/GameboyClassic.jpg"
