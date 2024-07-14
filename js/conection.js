@@ -1,10 +1,21 @@
 // conection.js
 
 async function productsList() {
-    const connection = await fetch("https://alura-geek-khaki.vercel.app/produtos");
-    const productList = await connection.json();
-    return productList;
+    try {
+        const connection = await fetch("https://alura-geek-khaki.vercel.app/");
+
+        if (!connection.ok) {
+            throw new Error(`HTTP error! Status: ${connection.status}`);
+        }
+
+        const productList = await connection.json();
+        return productList;
+    } catch (error) {
+        console.error('Error fetching products:', error);
+        throw error; // Rethrow the error to be handled elsewhere
+    }
 }
+
 
 async function createProduct(title, price, image) {
     const connection = await fetch("https://alura-geek-khaki.vercel.app/produtos", {
