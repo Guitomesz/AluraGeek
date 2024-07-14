@@ -47,6 +47,18 @@
       "title": "Game Boy Classic",
       "price": 59,
       "image": "../assets/images/GameboyClassic.jpg"
+    },
+    {
+      "id": 9,
+      "title": "Stormtrooper",
+      "price": 60,
+      "image": "../assets/images/StormTrooperCaneca.jpeg"
+    },
+    {
+      "id": 10,
+      "title": "Game Boy Classic",
+      "price": 59,
+      "image": "../assets/images/GameboyClassic.jpg"
     }
   ]
 }
