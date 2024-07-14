@@ -2,7 +2,7 @@
 
 async function productsList() {
     try {
-        const response = await fetch("https://alura-geek-khaki.vercel.app/");
+        const response = await fetch("https://alura-geek-khaki.vercel.app/produtos");
 
         if (!response.ok) {
             throw new Error(`Failed to fetch products: ${response.status} ${response.statusText}`);
