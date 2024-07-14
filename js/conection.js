@@ -2,13 +2,13 @@
 const BASE_URL = 'https://alura-geek-khaki.vercel.app';
 
 async function productsList() {
-    const connection = await fetch(`${BASE_URL}/produtos`)
+    const connection = await fetch(`${BASE_URL}`)
     const productList = await connection.json();
     return productList;
 }
 
 async function createProduct(title, price, image) {
-    const connection = await fetch(`${BASE_URL}/produtos`, {
+    const connection = await fetch(`${BASE_URL}`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -25,7 +25,7 @@ async function createProduct(title, price, image) {
 }
 
 async function deleteProduct(productId) {
-    const connection = await fetch(`${BASE_URL}/produtos/${productId}`, {
+    const connection = await fetch(`${BASE_URL}/${productId}`, {
         method: 'DELETE',
         headers: {
             "Content-Type": "application/json"
