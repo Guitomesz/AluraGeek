@@ -41,6 +41,9 @@ async function showProducts() {
     try {
         const productListData = await productsList();
 
+        // Log para verificar a lista de produtos
+        console.log('Lista de produtos:', productListData);
+
         // Limpa a lista antes de adicionar os novos itens
         list.innerHTML = '';
 
