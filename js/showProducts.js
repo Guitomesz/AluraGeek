@@ -23,7 +23,7 @@ function createCard(image, title, price, id) {
     const deleteButton = card.querySelector('.delete-button');
     deleteButton.addEventListener('click', async () => {
         try {
-            if (confirm("Tem certeza que deseja deletar ${id}")) {
+            if (confirm("Tem certeza que deseja deletar `${id}`")) {
                 await deleteProduct(id);
                 alert("Produto deletado com sucesso!");
                 location.reload();
