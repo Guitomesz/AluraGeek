@@ -7,10 +7,14 @@ async function productsList() {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
         const productList = await response.json();
-        return productList;
+        // Verifique a estrutura do objeto retornado
+        console.log('Resposta da API:', productList);
+
+        // Se a resposta não tiver a chave "produtos", retorne a resposta diretamente
+        return productList.produtos || productList;
     } catch (error) {
         console.error('Erro ao obter a lista de produtos:', error);
-        throw error;
+        throw error; // ou trate o erro de outra forma, conforme necessário
     }
 }
 

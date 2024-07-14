@@ -41,14 +41,23 @@ async function showProducts() {
     try {
         const productListData = await productsList();
 
+        // Log para verificar a lista de produtos
+        console.log('Lista de produtos:', productListData);
+
         // Limpa a lista antes de adicionar os novos itens
         list.innerHTML = '';
 
-        // Itera sobre a lista de produtos e cria os cards
-        productListData.forEach(product => {
-            const card = createCard(product.image, product.title, product.price, product.id);
-            list.appendChild(card);
-        });
+        // Verifica se productListData é um array
+        if (Array.isArray(productListData)) {
+            // Itera sobre a lista de produtos e cria os cards
+            productListData.forEach(product => {
+                const card = createCard(product.image, product.title, product.price, product.id);
+                list.appendChild(card);
+            });
+        } else {
+            console.error('Dados recebidos não são um array:', productListData);
+            alert("Erro ao carregar a lista de produtos. Verifique o console para mais detalhes.");
+        }
     } catch (error) {
         console.error('Erro ao carregar lista de produtos:', error);
         alert("Erro ao carregar a lista de produtos. Verifique o console para mais detalhes.");
