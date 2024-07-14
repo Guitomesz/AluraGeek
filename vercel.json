@@ -1,14 +1,14 @@
 {
   "routes": [
     {
-      "src": "/produtos",
+      "src": "produtos",
       "methods": ["GET", "POST"],
-      "dest": "/produtos/index.js"
+      "dest": "produtos/index.js"
     },
     {
-      "src": "/produtos/:id",
+      "src": "produtos/:id",
       "methods": ["GET", "PUT", "DELETE"],
-      "dest": "/produtos/[id].js"
+      "dest": "produtos/[id].js"
     }
   ]
 }
